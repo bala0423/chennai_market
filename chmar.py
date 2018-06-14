@@ -16,19 +16,18 @@ file_name = date_tab.find('h1').contents[0]
 #to find date
 
 a = file_name
-sep = '-,/'
-for i in sep:
-	file_name_split = (a.split('-'))
-	file_name_without_name  = (file_name_split[1])
+
+file_name_split = (a.split('-'))
+file_name_without_name  = (file_name_split[1])
+
+file_name_without_slash = (file_name_split[0])
 	
-	file_name_without_slash = (file_name_split[0])
-	
-	filename_date = (file_name_without_name.split('/'))
-	year = filename_date[-1]
-	months = {'Jan':'01','Feb':'02','Mar':'03','Apr':'04','May':'05','Jun':'06','Jul':'07','Aug':'08','Sep':'09','Oct':'10','Nov':'11','Dec':'12'}
-	month = months[filename_date[-2]]
-	day = filename_date[-3]
-	date_of_file = year + '-' + month + '-' + day
+filename_date = (file_name_without_name.split('/'))
+year = filename_date[-1]
+months = {'Jan':'01','Feb':'02','Mar':'03','Apr':'04','May':'05','Jun':'06','Jul':'07','Aug':'08','Sep':'09','Oct':'10','Nov':'11','Dec':'12'}
+month = months[filename_date[-2]]
+day = filename_date[-3]
+date_of_file = year + '-' + month + '-' + day
 	
 file_nam = file_name_without_slash + '-' + date_of_file + '.csv'
 csv_file = csv.writer(open(file_nam,'w'))
