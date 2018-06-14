@@ -15,9 +15,8 @@ file_name = date_tab.find('h1').contents[0]
 
 #to find date
 
-a = file_name
 
-file_name_split = (a.split('-'))
+file_name_split = (file_name.split('-'))
 file_name_without_name  = (file_name_split[1])
 
 file_name_without_slash = (file_name_split[0])
